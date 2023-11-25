@@ -1,7 +1,24 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 function Users() {
+
+    useEffect(()=>{
+        const fetchAllEmployees = async ()=>{
+            try
+            {
+                const res = await axios.get("http://localhost:3000/employees")
+                console.log(res.data);
+            }
+            catch(err)
+            {
+                console.log(err);
+            }
+        }
+        fetchAllEmployees()
+    },[])
   return (
     <div className='container'>
         <h2 className='w-100 d-flex justify-content-center p-3'>Employee management system</h2>
