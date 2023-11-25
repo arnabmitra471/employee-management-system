@@ -1,9 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {useState} from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 
 function Users() {
+    const [employees,setEmployees] = useState([])
 
     useEffect(()=>{
         const fetchAllEmployees = async ()=>{
@@ -11,6 +13,7 @@ function Users() {
             {
                 const res = await axios.get("http://localhost:3000/employees")
                 console.log(res.data);
+                setEmployees(res.data);
             }
             catch(err)
             {
@@ -37,6 +40,25 @@ function Users() {
                             <th>Actions</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        {
+                            employees.map((employee,i)=>{
+                                return(
+                                    <tr key={i}>
+                                        <td>{i+1}</td>
+                                        <td>{employee.name}</td>
+                                        <td>{employee.email}</td>
+                                        <td>{employee.password}</td>
+                                        <td>{employee.address}</td>
+                                        <td>{employee.salary}</td>
+                                        <td>
+                                            Add Edit Delete
+                                        </td>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </tbody>
                 </table>
             </div>
         </div>
