@@ -22,6 +22,17 @@ function Users() {
         }
         fetchAllEmployees()
     },[])
+    const handleDelete = async(id)=>{
+        try
+        {
+            await axios.delete(`http://localhost:3000/employees/${id}`)
+            window.location.reload();
+        }
+        catch(err)
+        {
+            console.log(err);
+        }
+    }
   return (
     <div className='container'>
         <h2 className='w-100 d-flex justify-content-center p-3'>Employee management system</h2>
@@ -54,6 +65,7 @@ function Users() {
                                         <td>
                                             <Link to={`/read/${employee.id}`} className='btn btn-success mx-2'>Read</Link>
                                             <Link to={`/edit/${employee.id}`} className='btn btn-primary mx-2'>Edit</Link>
+                                            <button onClick={()=>handleDelete(employee.id)} className='btn btn-danger'>Delete</button>
                                         </td>
                                     </tr>
                                 )
