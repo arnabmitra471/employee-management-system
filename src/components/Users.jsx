@@ -53,6 +53,7 @@ function Users() {
                                         <td>{employee.salary}</td>
                                         <td>
                                             <Link to={`/read/${employee.id}`} className='btn btn-success mx-2'>Read</Link>
+                                            <Link to={`/edit/${employee.id}`} className='btn btn-primary mx-2'>Edit</Link>
                                         </td>
                                     </tr>
                                 )
