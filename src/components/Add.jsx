@@ -45,11 +45,11 @@ export default function Add() {
                         </div>
                         <div className='mb-3 mt-3'>
                             <label htmlFor="email" className='form-label'>Email</label>
-                            <input type="text" className='form-control' id='email' placeholder='Enter your email' onChange={handleOnChange}name='email' autoComplete='off' required/>
+                            <input type="email" className='form-control' id='email' placeholder='Enter your email' onChange={handleOnChange}name='email' autoComplete='off' required/>
                         </div>
                         <div className='mb-3 mt-3'>
                             <label htmlFor="password" className='form-label'>Password</label>
-                            <input type="text" className='form-control' id='password' placeholder='Enter your password' name='password' autoComplete='off'required onChange={handleOnChange}/>
+                            <input type="password" className='form-control' id='password' placeholder='Enter your password' name='password' autoComplete='off'required onChange={handleOnChange}/>
                         </div>
                         <div className='mb-3 mt-3'>
                             <label htmlFor="salary" className='form-label'>Salary</label>

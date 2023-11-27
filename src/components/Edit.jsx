@@ -62,7 +62,7 @@ export default function Edit() {
             </div>
             <div className='mb-3 mt-3'>
                 <label htmlFor="password" className='form-label'>Password</label>
-                <input type="text" className="form-control" id="password" value={employees.password} placeholder='Change your password' name="password" onChange={handleOnChange}/>
+                <input type="password" className="form-control" id="password" value={employees.password} placeholder='Change your password' name="password" onChange={handleOnChange}/>
             </div>
             <div className='mb-3 mt-3'>
                 <label htmlFor="salary" className='form-label'>Salary</label>
